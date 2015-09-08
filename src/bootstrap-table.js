@@ -1713,10 +1713,12 @@
     };
 
     BootstrapTable.prototype.initSearchText = function () {
-        if (this.options.searchText !== '') {
-            var $search = this.$toolbar.find('.search input');
-            $search.val(this.options.searchText);
-            this.onSearch({currentTarget: $search});
+        if (this.options.search) {
+            if (this.options.searchText !== '') {
+                var $search = this.$toolbar.find('.search input');
+                $search.val(this.options.searchText);
+                this.onSearch({currentTarget: $search});
+            }
         }
     };
 
